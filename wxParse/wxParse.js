@@ -1,3 +1,4 @@
+
 /**
  * author: Di (微信小程序开发工程师)
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
@@ -30,15 +31,20 @@ wx.getSystemInfo({
  **/
 function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,imagePadding) {
   var that = target;
+  // console.log('target是', target)
   var transData = {};//存放转化后的数据
+  let res = {
+    data:{},
+    methods:{}
+  };  //返回的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    console.log('转换后的数据是', JSON.stringify(transData, ' ', ' '));
   } else if (type == 'md' || type == 'markdown') {
     var converter = new showdown.Converter();
     var html = converter.makeHtml(data);
     transData = HtmlToJson.html2json(html, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    // console.log(JSON.stringify(transData, ' ', ' '));
   }
   transData.view = {};
   transData.view.imagePadding = 0;
@@ -47,15 +53,24 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
   }
   var bindData = {};
   bindData[bindName] = transData;
-  that.setData(bindData)
-  that.wxParseImgLoad = wxParseImgLoad;
-  that.wxParseImgTap = wxParseImgTap;
+  console.log('bindData是', bindData);
+  // that.setData(bindData)
+  // that.wxParseImgLoad = wxParseImgLoad;
+  // that.wxParseImgTap = wxParseImgTap;
+  res.data[bindName] = bindData;
+  res.methods['wxParseImgTap'] = wxParseImgTap;
+  res.methods['wxParseImgLoad'] = wxParseImgLoad;
+  return res;
+  // console.log('绑定的事件是', that.wxParseImgTap);
 }
 // 图片点击事件
 function wxParseImgTap(e) {
   var that = this;
   var nowImgUrl = e.target.dataset.src;
   var tagFrom = e.target.dataset.from;
+  console.log('nowImgUrl是', nowImgUrl);
+  console.log('tagFrom是', that.data[tagFrom].imageUrls);
+  console.log('wx是',wx.previewImage);
   if (typeof (tagFrom) != 'undefined' && tagFrom.length > 0) {
     wx.previewImage({
       current: nowImgUrl, // 当前显示图片的http链接
