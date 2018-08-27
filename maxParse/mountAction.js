@@ -18,16 +18,30 @@ function wxParseImgTap(e) {
 function wxParseTagATap(e){
     var href = e.currentTarget.dataset.src;
     console.log(href);
-    //我们可以在这里进行一些路由处理
-    // if(href.indexOf(index) > 0){
-    //   // wx.redirectTo({
-    //   //   url: '../index/index'
-    //   // })
-    // }
 }
-  function mountAction(wx){
+function mountDefaultAction(wx){
     wx.wxParseImgTap = wxParseImgTap;
     wx.wxParseTagATap = wxParseTagATap;
+}
+function mountAction(wx, optionArray){
+  mountDefaultAction(wx);  ////挂载默认事件
+  let emptyFunc = function(){};
+  if(Array.isArray(optionArray)){
+    optionArray.forEach(item => {
+      switch(item.type){
+        case 'a' :
+          if(item.bindtap){
+            wx.wxParseTagATap = typeof item.bindtap === 'function' ? item.bindtap : emptyFunc;
+          }
+          break;
+        case 'img' :
+          if(item.bindtap){
+            wx.wxParseImgTap = typeof item.bindtap === 'function' ? item.bindtap : emptyFunc;
+          }
+        default:;
+      }
+    })
+  }
 }
 // module.exports = {
 //     mountAction: mountAction

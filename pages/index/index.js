@@ -11,7 +11,7 @@ Page({
     var article = `< !DOCTYPE HTML ><!--注释: wxParse试验文本-->
     <div>
       <div>
-      <img style="border:1px solid gray;width:100px;height:100px;float:left;" src="http://img1.imgtn.bdimg.com/it/u=3858199793,3438100278&fm=26&gp=0.jpg" alt="test" title="girl">
+      <img class="testImg"  src="http://img1.imgtn.bdimg.com/it/u=3858199793,3438100278&fm=26&gp=0.jpg" alt="test" title="girl">
       </div>
     </div>
     <p>okkkkk</p>
@@ -27,7 +27,15 @@ Page({
     that.setData({
       article:maxRes
     })
-    mountAction(this);
+    function bindATagAction(e){
+      console.log('hello a');
+    }
+    mountAction(that,[
+      {
+        type:'a',
+        bindtap:bindATagAction
+      }
+    ]);
   }
 
 })
