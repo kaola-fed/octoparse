@@ -155,7 +155,7 @@ function html2json(html, bindName) {
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 node.attr.src = imgUrl;
                 node.from = bindName;
-                node.bindtap = test;
+                // node.bindtap = test;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
             }
@@ -303,7 +303,7 @@ function test(){
 }
 // 图片点击事件
 function wxParseImgTap(e) {
-    console.log('触发了点击')
+    console.log('触发了点击!!!',e)
     var that = this;
     var nowImgUrl = e.target.dataset.src;
     var tagFrom = e.target.dataset.from;

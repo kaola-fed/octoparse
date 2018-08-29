@@ -11,7 +11,7 @@ Page({
     var article = `< !DOCTYPE HTML ><!--注释: wxParse试验文本-->
     <div>
       <div>
-      <img class="testImg"  src="http://img1.imgtn.bdimg.com/it/u=3858199793,3438100278&fm=26&gp=0.jpg" alt="test" title="girl">
+      <img id="img1" class="testImg"  src="http://img1.imgtn.bdimg.com/it/u=3858199793,3438100278&fm=26&gp=0.jpg" alt="test" title="girl">
       </div>
     </div>
     <p>okkkkk</p>

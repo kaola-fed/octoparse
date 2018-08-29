@@ -2,7 +2,7 @@
 
 // 图片点击事件
 function wxParseImgTap(e) {
-    console.log('触发了点击事件')
+    console.log('触发了点击事件！！！',e.target)
     var that = this;
     var nowImgUrl = e.target.dataset.src;
     var tagFrom = e.target.dataset.from;
