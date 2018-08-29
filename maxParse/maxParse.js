@@ -29,11 +29,11 @@ import HtmlToJson from './utils/html2json';
 /**
  * 主函数入口区
  **/
-function maxParse({type='html', data='<div class="color:red;">数据不能为空</div>'}){
+function maxParse({type='html', data='<div class="color:red;">数据不能为空</div>', mountEvent}){
   var transData = {};//存放转化后的数据
   let res = {};  //返回的数据
   if (type == 'html') {
-    transData = HtmlToJson.html2json(data, 'root');
+    transData = HtmlToJson.html2json(data, 'root', mountEvent);
   }
   res = transData;
   return res;

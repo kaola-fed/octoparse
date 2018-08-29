@@ -18,7 +18,7 @@
 </template>
 
 <template name="wxParseImg">
-  <image id="{{item.attr.id}}" class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="aspectFit"  bindtap="wxParseImgTap"  style="{{item.styleStr}}"
+  <image id="{{item.attr.id}}" class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="aspectFit"  bindtap="{{item.attr.action && item.attr.action.bindtap?item.attr.action.bindtap.eventName:'defaultBindTapEvent'}}"  style="{{item.styleStr}}"
   />
 </template>
 

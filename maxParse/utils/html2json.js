@@ -41,6 +41,112 @@ function makeMap(str) {
         obj[items[i]] = true;
     return obj;
 }
+////为obj添加action
+function addActionByFilter(obj, i){
+    if(i.filter){
+        if(i.filter.startsWith('.')){
+            // console.log('发现class')
+            let targetClass = i.filter.slice(1);
+            Object.keys(i.action).forEach(key => {
+                if(typeof i.action[key] == 'function'){
+                    if(!obj[i.type]['action']['class'][targetClass]){
+                        obj[i.type]['action']['class'][targetClass] = {};
+                    }
+                    obj[i.type]['action']['class'][targetClass][key] = i.action[key];
+                }
+            })
+            // for(var act in i.action){
+            //     // if(i.action.hasOwnProperty(act)){
+            //         // obj[i.type].action.class[targetClass][act] = i.action[act]
+            //         console.log('现在obj是', obj)
+            //     // }
+            // }
+            
+        }else if(i.filter.startsWith('#')){
+            let targetId = i.filter.slice(1);
+            Object.keys(i.action).forEach(key => {
+                if(typeof i.action[key] == 'function'){
+                    if(!obj[i.type]['action']['id'][targetId]){
+                        obj[i.type]['action']['id'][targetId] = {};
+                    }
+                    obj[i.type]['action']['id'][targetId][key] = i.action[key];
+                }
+            })
+            // for(let act in i.action){
+            //     if(i.action.hasOwnProperty(act) && typeof act == 'function'){
+            //         obj[i.type].action.id[targetId][act] = i.action[act]
+            //     }
+            // }
+        }
+    }else{
+        for(let act in i.action){
+            if(i.action.hasOwnProperty(act) && typeof act == 'function'){
+                obj[i.type].action.base[act] = i.action[act]
+            }
+        } 
+        Object.keys(i.action).forEach(key => {
+            if(typeof i.action[key] == 'function'){
+                if(!obj[i.type]['action']['base']){
+                    obj[i.type]['action']['base'] = {};
+                }
+                obj[i.type]['action']['base'][key] = i.action[key];
+            }
+        })
+    }
+    console.log('挂载完毕后obj是', obj)
+}
+///  
+///  整理用户的事件绑定规则
+function makeMapByArray(array){
+    let obj = {};
+    array.forEach(i => {
+        if(!obj[i.type]){
+            obj[i.type] = {
+                type: i.type,
+                action:{
+                    base:{},
+                    class:{},
+                    id:{}
+                }
+            }
+            addActionByFilter(obj, i);
+        }else{
+            addActionByFilter(obj, i);
+        }
+    })
+    return obj;
+}
+////为attr添加action
+function addActionByAttr(attr, tag, actionMap){
+    console.log('触发了这个函数, tag是', tag);
+    console.log('actionMap是', actionMap);
+    if(!actionMap)
+        return;
+    if(!actionMap[tag])
+        return;
+    console.log('走到了这里')
+    let actionObj = actionMap[tag].action;
+    // if(!attr.action){
+    //     attr.action = {};
+    // }
+    attr.action = Object.assign({}, actionObj.base);
+    if(attr.id){
+        if(actionObj.id[attr.id]){
+            attr.action = Object.assign(attr.action, actionObj.id[attr.id]);
+        }
+    }else if(attr.class && Array.isArray(attr.class)){
+        attr.class.forEach(i => {
+            if(actionObj.class[i]){
+                attr.action = Object.assign(attr.action, actionObj.class[i]);
+            }
+        })
+    }else if(attr.class){
+        if(actionObj.class[attr.class]){
+            attr.action = Object.assign(attr.action, actionObj.class[attr.class]);
+        }
+    }
+}
+
 
 function q(v) {
     return '"' + v + '"';
@@ -62,7 +168,13 @@ function trimHtml(html) {
 }
 
 
-function html2json(html, bindName) {
+function html2json(html, bindName, option) {
+    //整理用户的事件绑定规则
+    let actionMap = '';
+    console.log('option是', option);
+    if(Array.isArray(option)){
+        actionMap = makeMapByArray(option);
+    }
     //处理字符串
     html = removeDOCTYPE(html);
     html = trimHtml(html);
@@ -143,6 +255,8 @@ function html2json(html, bindName) {
 
                     return pre;
                 }, {});
+                ///为attr增加action绑定
+                addActionByAttr(node.attr, node.tag, actionMap);
             }
 
             //对img添加额外数据
