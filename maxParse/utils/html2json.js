@@ -35,6 +35,8 @@ var fillAttrs = makeMap("checked,compact,declare,defer,disabled,ismap,multiple,n
 
 // Special Elements (can contain anything)
 var special = makeMap("wxxxcode-style,script,style,view,scroll-view,block");
+
+
 function makeMap(str) {
     var obj = {}, items = str.split(",");
     for (var i = 0; i < items.length; i++)
@@ -60,9 +62,33 @@ function trimHtml(html) {
         .replace(/\/\*.*?\*\//ig, '')
         .replace(/[ ]+</ig, '<')
 }
+/////eventMap增加事件
+function addEvent2EventMap(eventMap, opt){
+    if(opt.filter){
+        if(opt.filter.startsWith('.')){
+            let className = opt.filter.slice(1);
+            eventMap['class'][className] 
+        }
+    }
+}
+////生成统一的事件处理函数
+function generateEventHandler(options){
+    let eventMap = {};
+    options.forEach(opt => {
+        if(!eventMap[opt.tag]){
+            eventMap[opt.tag] = {
+                base: {},
+                class: {},
+                id: {}
+            };
+        }
+    })
+    return function(item){
+        
+    }
+}
 
-
-function html2json(html, bindName) {
+function html2json(html, bindName, options) {
     //处理字符串
     html = removeDOCTYPE(html);
     html = trimHtml(html);
@@ -76,6 +102,9 @@ function html2json(html, bindName) {
         imageUrls:[]
     };
     var index = 0;
+    if(Array.isArray(options)){
+        let eventHandler = generateEventHandler(options);
+    }
     HTMLParser(html, {
         start: function (tag, attrs, unary) {
             //debug(tag, attrs, unary);
