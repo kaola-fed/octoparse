@@ -48,9 +48,10 @@ function addEvent2EventMap(eventMap, opt){
             // eventMap['class'][className] = Object.assign(eventMap['class'][className], opt.events);
           }
           eventMap['class'][className] = Object.assign(eventMap['class'][className], opt.events);
-      }else if(!opt.filter){
-        eventMap['base'] = Object.assign(eventMap['base'], opt.events);
       }
+  }else if(!opt.filter){
+    eventMap['base'] = Object.assign(eventMap['base'], opt.events);
+    console.log('eventMap是', eventMap);
   }
 }
 function findClassInRule(ruleClass, classStr){

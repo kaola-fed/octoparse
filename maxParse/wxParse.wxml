@@ -59,7 +59,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -103,8 +103,8 @@
       <template is="WxParseBr"></template>
     </block>
     <!--其他块级标签-->
-    <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+    <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:elif="{{item.tagType == 'block'}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse1" data="{{item}}" />
         </block>
@@ -112,7 +112,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse1" data="{{item}}" />
       </block>
@@ -144,7 +144,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -181,8 +181,8 @@
       <template is="WxParseBr"></template>
     </block>
     <!--其他块级标签-->
-    <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+    <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:elif="{{item.tagType == 'block'}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse2" data="{{item}}" />
         </block>
@@ -190,7 +190,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse2" data="{{item}}" />
       </block>
@@ -221,7 +221,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -258,8 +258,8 @@
       <template is="WxParseBr"></template>
     </block>
     <!--其他块级标签-->
-    <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+    <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:elif="{{item.tagType == 'block'}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse3" data="{{item}}" />
         </block>
@@ -267,7 +267,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse3" data="{{item}}" />
       </block>
@@ -297,7 +297,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -334,8 +334,8 @@
       <template is="WxParseBr"></template>
     </block>
     <!--其他块级标签-->
-    <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+    <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:elif="{{item.tagType == 'block'}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse4" data="{{item}}" />
         </block>
@@ -343,7 +343,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse4" data="{{item}}" />
       </block>
@@ -373,7 +373,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -411,7 +411,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse5" data="{{item}}" />
         </block>
@@ -419,7 +419,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse5" data="{{item}}" />
       </block>
@@ -449,7 +449,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -487,7 +487,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse6" data="{{item}}" />
         </block>
@@ -495,7 +495,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse6" data="{{item}}" />
       </block>
@@ -525,7 +525,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -563,7 +563,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse7" data="{{item}}" />
         </block>
@@ -571,7 +571,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse7" data="{{item}}" />
       </block>
@@ -600,7 +600,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -638,7 +638,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse8" data="{{item}}" />
         </block>
@@ -646,7 +646,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse8" data="{{item}}" />
       </block>
@@ -676,7 +676,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -714,7 +714,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse9" data="{{item}}" />
         </block>
@@ -722,7 +722,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse9" data="{{item}}" />
       </block>
@@ -752,7 +752,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -790,7 +790,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse10" data="{{item}}" />
         </block>
@@ -798,7 +798,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse10" data="{{item}}" />
       </block>
@@ -828,7 +828,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -866,7 +866,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse11" data="{{item}}" />
         </block>
@@ -874,7 +874,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse11" data="{{item}}" />
       </block>
@@ -904,7 +904,7 @@
     </block>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
-      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
         <view class="{{item.classStr}} wxParse-li-inner">
           <view class="{{item.classStr}} wxParse-li-text">
             <view class="{{item.classStr}} wxParse-li-circle"></view>
@@ -942,7 +942,7 @@
     </block>
     <!--其他块级标签-->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
           <template is="wxParse12" data="{{item}}" />
         </block>
@@ -950,7 +950,7 @@
     </block>
 
     <!--内联标签-->
-    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+    <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" bindtap="agentFunc" wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
       <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
         <template is="wxParse12" data="{{item}}" />
       </block>

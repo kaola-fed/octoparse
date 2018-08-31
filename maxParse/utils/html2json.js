@@ -71,24 +71,8 @@ function addEvent2EventMap(eventMap, opt){
         }
     }
 }
-////生成统一的事件处理函数
-function generateEventHandler(options){
-    let eventMap = {};
-    options.forEach(opt => {
-        if(!eventMap[opt.tag]){
-            eventMap[opt.tag] = {
-                base: {},
-                class: {},
-                id: {}
-            };
-        }
-    })
-    return function(item){
-        
-    }
-}
 
-function html2json(html, bindName, options) {
+function html2json(html, bindName) {
     //处理字符串
     html = removeDOCTYPE(html);
     html = trimHtml(html);
@@ -102,9 +86,6 @@ function html2json(html, bindName, options) {
         imageUrls:[]
     };
     var index = 0;
-    if(Array.isArray(options)){
-        let eventHandler = generateEventHandler(options);
-    }
     HTMLParser(html, {
         start: function (tag, attrs, unary) {
             //debug(tag, attrs, unary);
