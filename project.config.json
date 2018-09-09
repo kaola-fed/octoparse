@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.1",
+	"libVersion": "0.0.1",
 	"appid": "wxb78bc4f3df1f6b15",
-	"projectname": "maxParse",
+	"projectname": "maxParseDemo",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

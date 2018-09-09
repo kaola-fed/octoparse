@@ -1,20 +1,18 @@
 {
-  "name": "wxParse",
-  "version": "0.3.0",
-  "description": "wxParse-微信小程序富文本解析自定义组件，支持HTML及markdown解析",
-  "homepage": "http://weappdev.com/",
+  "name": "maxParse",
+  "version": "0.1.0",
+  "description": "maxParse-微信小程序富文本解析自定义组件",
+  "homepage": "https://github.com/stevenBZ/maxParse",
   "repository": {
     "type": "git",
-    "url": "git@github.com:icindy/wxParse.git"
+    "url": "https://github.com/stevenBZ/maxParse.git"
   },
-  "main": "wxParse/wxParse.js",
+  "main": "maxParse/index.js",
   "scripts": {},
   "keywords": [
     "html",
-    "markdown",
     "weapp",
-    "weixin",
-    "wxparse-html-markdown"
+    "weixin"
   ],
   "devDependencies": {},
   "dependencies": {}

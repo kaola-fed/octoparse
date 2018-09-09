@@ -6,10 +6,10 @@
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
  *               垂直微信小程序开发交流社区
  * 
- * github地址: https://github.com/icindy/wxParse
+ * github地址: https://github.com/icindy/maxParse
  * 
  * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
+ * detail : http://weappdev.com/t/maxParse-alpha0-1-html-markdown/184
  */
 
 var __placeImgeUrlHttps = "https";
@@ -302,7 +302,7 @@ function transEmojiStr(str){
   return emojiObjs;
 }
 
-function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
+function emojisInit(reg='',baseSrc="/maxParse/emojis/",emojis){
     __emojisReg = reg;
     __emojisBaseSrc=baseSrc;
     __emojis=emojis;
@@ -312,7 +312,7 @@ function test(){
     console.log('test')
 }
 // 图片点击事件
-function wxParseImgTap(e) {
+function maxParseImgTap(e) {
     console.log('触发了点击!!!',e)
     var that = this;
     var nowImgUrl = e.target.dataset.src;

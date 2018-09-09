@@ -1,6 +1,6 @@
 
-<import src="../../maxParse/wxParse.wxml"/> 
-<view class="wxParse">
-    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<import src="../../maxParse/maxParse.wxml"/> 
+<view class="maxParse">
+    <template is="maxParse" data="{{maxParseData:article.nodes}}"/>
 </view>
 

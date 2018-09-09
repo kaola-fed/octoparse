@@ -13,9 +13,9 @@ Page({
       <img id="img1" class=".test .testImg2"  src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3492149706,1549268323&fm=26&gp=0.jpg" alt="test" title="girl"> 
     </div>
     <div class=".block">okkkkk</div>
-    <a class=".testA .testB" href="www.baidu.com">百度主页</a>
-    <a href="www.baidu.com">百度主页2</a>
-    <a id="testId" href="www.baidu.com">百度主页3</a>
+    <a class=".testA .testB" href="www.baidu.com">测试链接一</a>
+    <a href="www.baidu.com">测试链接二</a>
+    <a id="testId" href="www.baidu.com">测试链接三</a>
     `;
     function showImg(e){
       console.log('gg')
