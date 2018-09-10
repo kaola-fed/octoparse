@@ -1,3 +1,5 @@
-var maxParse = require('./maxParse');
+import octoParse from './lib/index.js';
 
-exports.maxParse = maxParse;
+exports.octoParse = octoParse;
+export default octoParse;
+

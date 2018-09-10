@@ -1,4 +1,4 @@
-import {maxParse, mountAction} from '../../maxParse/index.js';
+import octoParse from '../../lib/index.js';
 Page({
   data: {
     name: 1
@@ -8,7 +8,7 @@ Page({
     /**
      * html解析示例
      */
-    var article = `< !DOCTYPE HTML ><!--注释: maxParse试验文本-->
+    var article = `< !DOCTYPE HTML ><!--注释: octoParse试验文本-->
     <div>
       <img id="img1" class=".test .testImg2"  src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3492149706,1549268323&fm=26&gp=0.jpg" alt="test" title="girl"> 
     </div>
@@ -30,12 +30,12 @@ Page({
       type: 'html',
       data: article
     }
-    let maxRes = maxParse(params);
+    let maxRes = octoParse.htmlParse(params);
     console.log('解析的结果是', maxRes);
     that.setData({
       article:maxRes
     })
-    mountAction(that,[
+    octoParse.mountAction(that,[
       {
         tag:'img',
         filter: '#img1',

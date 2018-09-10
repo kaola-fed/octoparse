@@ -1,13 +1,13 @@
 {
-  "name": "maxParse",
+  "name": "octoparse",
   "version": "0.1.0",
-  "description": "maxParse-微信小程序富文本解析自定义组件",
-  "homepage": "https://github.com/stevenBZ/maxParse",
+  "description": "octoParse-微信小程序富文本解析自定义组件",
+  "homepage": "https://github.com/stevenBZ/octoParse",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevenBZ/maxParse.git"
+    "url": "https://github.com/stevenBZ/octoParse.git"
   },
-  "main": "maxParse/index.js",
+  "main": "octoParse/index.js",
   "scripts": {},
   "keywords": [
     "html",

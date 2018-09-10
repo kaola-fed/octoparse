@@ -1,2 +1,2 @@
-@import "/maxParse/maxParse.wxss";
+@import "/lib/octoParse.wxss";
 

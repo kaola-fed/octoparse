@@ -4,13 +4,13 @@
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
  *               垂直微信小程序开发交流社区
  * 
- * github地址: https://github.com/icindy/maxParse
+ * github地址: https://github.com/icindy/octoParse
  * 
  * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/maxParse-alpha0-1-html-markdown/184
+ * detail : http://weappdev.com/t/octoParse-alpha0-1-html-markdown/184
  */
 
-.maxParse{
+.octoParse{
     margin: 0 5px;
     font-family: Helvetica,sans-serif;
     font-size: 28rpx;
@@ -20,85 +20,85 @@
 view{
     word-break:break-all; overflow:auto;
 }
-.maxParse-inline{
+.octoParse-inline{
     display: inline;
     margin: 0;
     padding: 0;
 }
 /*//标题 */
-.maxParse-div{margin: 0;padding: 0;}
-.maxParse-h1{ font-size:2em; margin: .67em 0 }
-.maxParse-h2{ font-size:1.5em; margin: .75em 0 }
-.maxParse-h3{ font-size:1.17em; margin: .83em 0 }
-.maxParse-h4{ margin: 1.12em 0}
-.maxParse-h5 { font-size:.83em; margin: 1.5em 0 }
-.maxParse-h6{ font-size:.75em; margin: 1.67em 0 }
+.octoParse-div{margin: 0;padding: 0;}
+.octoParse-h1{ font-size:2em; margin: .67em 0 }
+.octoParse-h2{ font-size:1.5em; margin: .75em 0 }
+.octoParse-h3{ font-size:1.17em; margin: .83em 0 }
+.octoParse-h4{ margin: 1.12em 0}
+.octoParse-h5 { font-size:.83em; margin: 1.5em 0 }
+.octoParse-h6{ font-size:.75em; margin: 1.67em 0 }
 
-.maxParse-h1 {
+.octoParse-h1 {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: .9em;
 }
-.maxParse-h2 {
+.octoParse-h2 {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: .34em;
 }
-.maxParse-h3 {
+.octoParse-h3 {
   font-weight: 400;
   font-size: 15px;
   margin-bottom: .34em;
 }
-.maxParse-h4 {
+.octoParse-h4 {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: .24em;
 }
-.maxParse-h5 {
+.octoParse-h5 {
   font-weight: 400;
   font-size: 13px;
   margin-bottom: .14em;
 }
-.maxParse-h6 {
+.octoParse-h6 {
   font-weight: 400;
   font-size: 12px;
   margin-bottom: .04em;
 }
 
-.maxParse-h1, .maxParse-h2, .maxParse-h3, .maxParse-h4, .maxParse-h5, .maxParse-h6, .maxParse-b, .maxParse-strong  { font-weight: bolder }
+.octoParse-h1, .octoParse-h2, .octoParse-h3, .octoParse-h4, .octoParse-h5, .octoParse-h6, .octoParse-b, .octoParse-strong  { font-weight: bolder }
 
-.maxParse-i,.maxParse-cite,.maxParse-em,.maxParse-var,.maxParse-address{font-style:italic}
-.maxParse-pre,.maxParse-tt,.maxParse-code,.maxParse-kbd,.maxParse-samp{font-family:monospace}
-.maxParse-pre{white-space:pre}
-.maxParse-big{font-size:1.17em}
-.maxParse-small,.maxParse-sub,.maxParse-sup{font-size:.83em}
-.maxParse-sub{vertical-align:sub}
-.maxParse-sup{vertical-align:super}
-.maxParse-s,.maxParse-strike,.maxParse-del{text-decoration:line-through}
-/*maxParse-自定义个性化的css样式*/
+.octoParse-i,.octoParse-cite,.octoParse-em,.octoParse-var,.octoParse-address{font-style:italic}
+.octoParse-pre,.octoParse-tt,.octoParse-code,.octoParse-kbd,.octoParse-samp{font-family:monospace}
+.octoParse-pre{white-space:pre}
+.octoParse-big{font-size:1.17em}
+.octoParse-small,.octoParse-sub,.octoParse-sup{font-size:.83em}
+.octoParse-sub{vertical-align:sub}
+.octoParse-sup{vertical-align:super}
+.octoParse-s,.octoParse-strike,.octoParse-del{text-decoration:line-through}
+/*octoParse-自定义个性化的css样式*/
 /*增加video的css样式*/
-.maxParse-strong,.maxParse-s{display: inline}
-.maxParse-a{
+.octoParse-strong,.octoParse-s{display: inline}
+.octoParse-a{
     color: deepskyblue;
     word-break:break-all;
     overflow:auto;
 }
 
-.maxParse-video{
+.octoParse-video{
     text-align: center;
     margin: 10px 0;
 }
 
-.maxParse-video-video{
+.octoParse-video-video{
     width:100%;
 }
 
-.maxParse-img{
+.octoParse-img{
     /*background-color: #efefef;*/
     overflow: hidden;
 }
 
-.maxParse-blockquote {
+.octoParse-blockquote {
     margin: 0;
     padding:10px 0 10px 5px;
     font-family:Courier, Calibri,"宋体";
@@ -106,26 +106,26 @@ view{
     border-left: 3px solid #dbdbdb;
 }
 
-.maxParse-code,.maxParse-wxxxcode-style{
+.octoParse-code,.octoParse-wxxxcode-style{
     display: inline;
     background:#f5f5f5;
 }
-.maxParse-ul{
+.octoParse-ul{
     margin: 20rpx 10rpx;
 }
 
-.maxParse-li,.maxParse-li-inner{
+.octoParse-li,.octoParse-li-inner{
     display: flex;
     align-items: baseline;
     margin: 10rpx 0;
 }
-.maxParse-li-text{
+.octoParse-li-text{
     
     align-items: center;
     line-height: 20px;
 }
 
-.maxParse-li-circle{
+.octoParse-li-circle{
     display: inline-flex;
     width: 5px;
     height: 5px;
@@ -133,14 +133,14 @@ view{
     margin-right: 5px;
 }
 
-.maxParse-li-square{
+.octoParse-li-square{
     display: inline-flex;
     width: 10rpx;
     height: 10rpx;
     background-color: #333;
     margin-right: 5px;
 }
-.maxParse-li-ring{
+.octoParse-li-ring{
     display: inline-flex;
     width: 10rpx;
     height: 10rpx;
@@ -150,24 +150,24 @@ view{
     margin-right: 5px;
 }
 
-/*.maxParse-table{
+/*.octoParse-table{
     width: 100%;
     height: 400px;
 }
-.maxParse-thead,.maxParse-tfoot,.maxParse-tr{
+.octoParse-thead,.octoParse-tfoot,.octoParse-tr{
     display: flex;
     flex-direction: row;
 }
-.maxParse-th,.maxParse-td{
+.octoParse-th,.octoParse-td{
     display: flex;
     width: 580px;
     overflow: auto;
 }*/
 
-.maxParse-u {
+.octoParse-u {
   text-decoration: underline;
 }
-.maxParse-hide{
+.octoParse-hide{
     display: none;
 }
 .WxEmojiView{
@@ -177,30 +177,30 @@ view{
     width: 16px;
     height:16px;
 }
-.maxParse-tr{
+.octoParse-tr{
 	display: flex;
 	border-right:1px solid #e0e0e0;
 	border-bottom:1px solid #e0e0e0;
 	border-top:1px solid #e0e0e0;
 }
-.maxParse-th,
-.maxParse-td{
+.octoParse-th,
+.octoParse-td{
 	flex:1;
 	padding:5px;
 	font-size:28rpx;
 	border-left:1px solid #e0e0e0;
 	word-break: break-all;
 }
-.maxParse-td:last{
+.octoParse-td:last{
 	border-top:1px solid #e0e0e0;
 }
-.maxParse-th{
+.octoParse-th{
 	background:#f0f0f0;
 	border-top:1px solid #e0e0e0;
 }
-.maxParse-del{
+.octoParse-del{
     display: inline;
 }
-.maxParse-figure {
+.octoParse-figure {
   overflow: hidden;
 }
