@@ -1,6 +1,6 @@
 
 <import src="../../lib/octoParse.wxml"/> 
 <view class="octoParse">
-    <template is="octoParse" data="{{octoParseData:article.nodes}}"/>
+    <template is="octoParse" data="{{octoParseData:article}}"/>
 </view>
 
