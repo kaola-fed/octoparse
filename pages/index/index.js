@@ -8,30 +8,22 @@ Page({
     /**
      * html解析示例
      */
-    var article = `< !DOCTYPE HTML ><!--注释: octoParse试验文本-->
-    <div>
-      <img id="img1" class=".test .testImg2"  src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3492149706,1549268323&fm=26&gp=0.jpg" alt="test" title="girl"> 
-    </div>
-    <div class=".block">okkkkk</div>
-    <a class=".testA .testB" href="www.baidu.com">测试链接一</a>
-    <a href="www.baidu.com">测试链接二</a>
-    <a id="testId" href="www.baidu.com">测试链接三</a>
+    var article = `<p class="test" id="mmm"><img src="http://haitao.nosdn2.127.net/onlineigirymdz12931.jpg" style="" /></p>
+    <p class="test ddd"><img src="http://haitao.nosdn2.127.net/onlineigirymdz12931.jpg" style="" /></p>  
+    <p class="test"><img src="http://haitao.nosdn1.127.net/ipz5qjmw83_710_341.jpg" /></p> 
     `;
-    function showImg(e){
-      console.log('gg')
+    let options = {
+      p:{
+        include: '',
+        except: '',
+        removeAttrs: ['class'],
+        addAttrs: [{
+          name: 'style',
+          value: 'background:red;'
+        }]
+      }
     }
-    function bindATagAction(e){
-      console.log('hello yanxiaobo');
-    }
-    function bindATagAction2(e){
-      console.log('are u ok?');
-    }
-    let params = {
-      type: 'html',
-      data: article
-    }
-    let maxRes = octoParse.htmlParse(params);
-    console.log('解析的结果是', maxRes);
+    let maxRes = octoParse.htmlParse(article, options);
     that.setData({
       article:maxRes
     })
@@ -65,6 +57,15 @@ Page({
         }
       }
     ]);
+    function showImg(e){
+      console.log('gg')
+    }
+    function bindATagAction(e){
+      console.log('hello yanxiaobo');
+    }
+    function bindATagAction2(e){
+      console.log('are u ok?');
+    }
   }
 
 })

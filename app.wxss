@@ -1,2 +1,2 @@
-@import "/lib/octoParse.wxss";
+@import "/lib/platform/wechat/index.wxss";
 
