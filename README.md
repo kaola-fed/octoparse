@@ -23,6 +23,7 @@ npm install octoparse
     let res = octoparse.htmlParse(htmlStr)
 ```
 
+
 ### 在vue中以插件方式使用
 
 ```html
@@ -37,25 +38,56 @@ npm install octoparse
         </div>`;
     let res = Vue.$htmlParse(htmlStr)
 ```
+### 在小程序中使用
+1、在小程序模板中引入octoparse模板
 
+注意此处的data的key需要为nodes以便和octoparse小程序模板的入口模板保持一致
+```html
+<import src="node_modules/octoparse/lib/platform/wechat/index.wxml"/> 
+<view class="octoParse">
+    <template is="octoParse" data="{{nodes:htmlData}}"/>
+</view>
+```
+2、 在page中挂载数据
+```html
+    import octoparse from 'octoparse'
+    
+    Page({
+        ...
+        onLoad: function(){
+            let htmlStr = 
+            `<div>
+                <p>test</p>
+                <img id="img1" class=".test .testImg2"  src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3492149706,1549268323&fm=26&gp=0.jpg" alt="test" title="girl">
+             </div>`;
+            let res = octoparse.htmlParse(htmlStr)
+            
+            this.setData({
+                htmlData: res   
+            })
+        }
+        ...
+    })
+
+```
 ### 在Megola中使用
 
 [Megola 基于Vue的跨平台小程序开发框架](https://github.com/kaola-fed/megalo)
 
 1、在webpack中配置挂载小程序模板
 ```html
-module.exports = {
-    ...
-    target: createMegaloTarget( {
-        compiler: Object.assign( compiler, {}),
-        platform: 'wechat',
-        htmlParse: {
-            templateName: 'octoParse',
-            src: resolve('node_modules/octoparse/lib/platform/wechat')
-        }
-    }),
-    ...
-}
+    module.exports = {
+        ...
+        target: createMegaloTarget( {
+            compiler: Object.assign( compiler, {}),
+            platform: 'wechat',
+            htmlParse: {
+                templateName: 'octoParse',
+                src: resolve('node_modules/octoparse/lib/platform/wechat')
+            }
+        }),
+         ...
+    }
 
 ```
 2、在vue上挂载octoparse
@@ -113,13 +145,15 @@ module.exports = {
 ```
 #### 节点属性释义
 
-* attr 属性键值对
-* classStr    class名字符串（class一般使用这个字符串生效）
-* styleStr    style字符串（style一般使用这个字符串生效）
-* index 节点在节点树中的序列号
-* node 节点类型
-* nodes 子节点数组
-* tag 节点标签名
+| 属性名 | 含义 | 注释 |
+| ------ | ------ | ------ |
+| node | 节点类型 |  |
+| tag | 节点标签名 |  |
+| index | 节点在节点树中的序列号 | |
+| attr | 属性键值对 |  |
+| classStr | class字符串 | 在模板中使用该属性使class生效|
+| styleStr | style字符串 | 在模板中使用该属性使style生效 |
+| nodes | 子节点数组 |  |
 
 
 参考： [访问者模式](https://zh.wikipedia.org/wiki/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F)
