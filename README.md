@@ -7,7 +7,7 @@
 
 ### 下载
 ```html
-npm install octoparse
+    npm install octoparse
 ```
 
 ### 直接使用
