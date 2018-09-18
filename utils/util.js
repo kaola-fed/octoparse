@@ -1,5 +1,5 @@
 
-// 加载配置文件
+// 加载配置文件1
 const config = require( '../config.js' );
 
 function formatTime( date ) {

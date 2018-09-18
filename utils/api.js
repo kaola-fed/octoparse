@@ -10,7 +10,7 @@ function obj2uri (obj) {
 }
 
 module.exports = {
-    // 获取内容页数据
+    // 内容页数据
     getTopicByID: function (id, obj) {
         return HOST_URI + GET_TOPIC_BY_ID + id + '?' + obj2uri(obj);
     }
