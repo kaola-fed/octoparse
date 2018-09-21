@@ -9,10 +9,8 @@ Page({
     /**
      * html解析示例
      */
-    var article = `<p style="backGRound:red;border:10px solid gray;" class="test" id="mmm"><img src="http://haitao.nosdn2.127.net/onlineigirymdz12931.jpg" style="" /></p>
-    <p class="test ddd"><img src="http://haitao.nosdn2.127.net/onlineigirymdz12931.jpg" style="" /></p>  
-    <p class="test"><img src="http://haitao.nosdn1.127.net/ipz5qjmw83_710_341.jpg" /></p> 
-    `;
+    var article = `<div>test</div>
+                    <p>666</p>`;
     let options = {
       platform: 'wechat',
       plugins: [removeBackground],
