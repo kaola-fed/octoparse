@@ -41,7 +41,8 @@
 ### 在小程序中使用
 1、在小程序模板中引入octoparse模板
 
-注意此处的data的key需要为nodes以便和octoparse小程序模板的入口模板保持一致
+* 此处的data的key需要为nodes以便和octoparse小程序模板的入口模板保持一致
+* 此处的例子为微信小程序，支付宝小程序的使用方式基本相同，注意引用的模板为platform/alipay/index.axml
 ```html
 <import src="node_modules/octoparse/lib/platform/wechat/index.wxml"/> 
 <view class="octoParse">
