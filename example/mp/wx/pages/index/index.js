@@ -1,5 +1,4 @@
-import octoParse from '../../lib/index.js';
-import removeBackground from '../../lib/plugins/removeBackground';
+import octoParse from '../lib/index.js';
 Page({
   data: {
     name: 1
@@ -13,7 +12,7 @@ Page({
                     <p>666</p>`;
     let options = {
       platform: 'wechat',
-      plugins: [removeBackground],
+      plugins: [],
       visitors: {
         img(node){
           node.styleStr = '';

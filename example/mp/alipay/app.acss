@@ -1,0 +1,7 @@
+@import "../../../lib/platform/alipay/index.acss";
+
+page {
+  flex: 1;
+  display: flex;
+  background: #f7f7f7;
+}
