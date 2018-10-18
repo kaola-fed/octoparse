@@ -1,7 +1,9 @@
 source_path=$(cd lib; pwd)
 postfix_path=/lib
-wx_link_path=$(cd example/mp/wx/pages;pwd)${postfix_path}
-alipay_link_path=$(cd example/mp/alipay/pages;pwd)${postfix_path}
+wx_link_path=$(cd example/mp/wx/pages;pwd)
+alipay_link_path=$(cd example/mp/alipay/pages;pwd)
+
+
 
 # echo $source_path
 # echo $wx_link_path
