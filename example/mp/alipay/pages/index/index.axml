@@ -1,4 +1,4 @@
-<import src="../lib/platform/alipay/index.axml">
+<import src="../../lib/platform/alipay/index.axml" />
 <view class="octoParse">
   <template is="octoParse" data="{{nodes:article}}"/>
-</view>
+</view>             

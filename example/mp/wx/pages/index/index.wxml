@@ -1,7 +1,6 @@
 
-<import src="../lib/platform/wechat/index.wxml" />
+<import src="../../lib/platform/wechat/index.wxml" />
 <view class="octoParse">
     <template is="octoParse" data="{{nodes:article}}"/>
 </view>
-<view>ok</view>
              

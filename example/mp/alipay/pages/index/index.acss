@@ -1,0 +1,5 @@
+.ali_title{
+    text-align: center;
+    margin-top:10px;
+    font-weight: 900;
+}
