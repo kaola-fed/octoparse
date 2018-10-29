@@ -1,6 +1,6 @@
 {
   "name": "octoparse",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "octoParse-微信小程序富文本解析自定义组件",
   "homepage": "https://github.com/stevenBZ/octoParse",
   "repository": {
@@ -28,10 +28,5 @@
   },
   "dependencies": {
     "gulp": "^3.9.1"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
   }
 }
