@@ -1,15 +1,16 @@
 {
   "name": "octoparse",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "octoParse-小程序富文本解析自定义组件",
-  "homepage": "https://github.com/stevenBZ/octoParse",
+  "homepage": "https://github.com/kaola-fed/octoparse",
   "files": [
     "lib",
     "index.js"
   ],
+  "author": "kaola-fed",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevenBZ/octoParse.git"
+    "url": "https://github.com/kaola-fed/octoparse.git"
   },
   "main": "octoParse/index.js",
   "scripts": {
