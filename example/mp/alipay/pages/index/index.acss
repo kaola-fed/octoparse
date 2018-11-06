@@ -1,3 +1,4 @@
+@import '../../lib/platform/alipay/index.acss';
 .ali_title{
     text-align: center;
     margin-top:10px;

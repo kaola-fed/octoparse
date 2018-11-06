@@ -16,3 +16,5 @@ node_modules/
 .vscode/
 jsconfig.json
 typings/
+example/mp/*/lib
+.tea

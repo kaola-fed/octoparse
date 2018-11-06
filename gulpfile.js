@@ -1,17 +1,34 @@
-var gulp = require('gulp');
+const { src, dest, parallel, watch } = require('gulp');
 
-gulp.task('copy_wx',function(){
-    gulp.src('lib/**/*')
-        .pipe(gulp.dest('example/mp/wx/lib'));
-});
-gulp.task('copy_alipay',function(){
-  gulp.src('lib/**/*')
-      .pipe(gulp.dest('example/mp/alipay/lib'));
-});
-gulp.task('default', function() {
-  // 将你的默认的任务代码放在这
-  gulp.watch('lib/*',['copy_wx', 'copy_alipay']);
-});
+function copy({ from, to }) {
+  return function copy() {
+    console.log(`copy from ${from} to ${to}`)
+    return src(from)
+      .pipe(dest(to));
+  }
+}
 
+function makeDevTasks() {
+  return ['wx', 'alipay', 'swan'].map((platform) => (
+    copy({
+      from: 'lib/**/*',
+      to: `example/mp/${platform}/lib`
+    })
+  ));
+}
 
+function dev() {
+  const watchOptions = {
+    ignoreInitial: false
+  }
+  watch(
+    'lib/**/*',
+    watchOptions,
+    parallel(...makeDevTasks())
+  )
+}
 
+module.exports = {
+  dev,
+  default: dev
+}

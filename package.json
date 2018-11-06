@@ -1,18 +1,27 @@
 {
   "name": "octoparse",
+<<<<<<< HEAD
   "version": "0.1.11",
   "description": "octoParse-微信小程序富文本解析自定义组件",
   "homepage": "https://github.com/stevenBZ/octoParse",
+=======
+  "version": "0.2.0",
+  "description": "octoParse-小程序富文本解析自定义组件",
+  "homepage": "https://github.com/kaola-fed/octoparse",
+>>>>>>> 7da3d7609ed5fc5e7132560cbf73dca79a5b0f35
   "files": [
     "lib",
     "index.js"
   ],
+  "author": "kaola-fed",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevenBZ/octoParse.git"
+    "url": "https://github.com/kaola-fed/octoparse.git"
   },
   "main": "octoParse/index.js",
   "scripts": {
+    "tasks": "gulp --tasks",
+    "dev": "gulp dev",
     "test": "jest"
   },
   "keywords": [
@@ -27,10 +36,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "gulp": "^4.0.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0"
   },
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "dependencies": {}
 }
