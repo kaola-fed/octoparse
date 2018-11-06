@@ -1,0 +1,6 @@
+
+<import src="../../lib/platform/swan/index.swan" />
+<view class="octoParse">
+    <template is="octoParse" data="{{{nodes:article}}}"/>
+</view>
+             
