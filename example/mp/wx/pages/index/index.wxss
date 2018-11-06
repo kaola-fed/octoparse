@@ -1,3 +1,4 @@
+@import '../../lib/platform/wechat/index.wxss';
 .sus-h2{
     color: red;
 }
