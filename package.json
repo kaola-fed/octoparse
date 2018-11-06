@@ -1,7 +1,7 @@
 {
   "name": "octoparse",
   "version": "0.1.10",
-  "description": "octoParse-微信小程序富文本解析自定义组件",
+  "description": "octoParse-小程序富文本解析自定义组件",
   "homepage": "https://github.com/stevenBZ/octoParse",
   "files": [
     "lib",
@@ -13,6 +13,8 @@
   },
   "main": "octoParse/index.js",
   "scripts": {
+    "tasks": "gulp --tasks",
+    "dev": "gulp dev",
     "test": "jest"
   },
   "keywords": [
@@ -27,10 +29,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "gulp": "^4.0.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0"
   },
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "dependencies": {}
 }
