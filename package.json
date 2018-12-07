@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/kaola-fed/octoparse.git"
   },
-  "main": "octoParse/index.js",
+  "main": "index.js",
   "scripts": {
     "tasks": "gulp --tasks",
     "dev": "gulp dev",

@@ -20,7 +20,6 @@ Page({
       }
     }
     let maxRes = octoParse.htmlParse(article, options);
-    console.log('解析结果是', maxRes);
     that.setData({
       article:maxRes
     })
@@ -55,13 +54,10 @@ Page({
       }
     ]);
     function showImg(e){
-      console.log('gg')
     }
     function bindATagAction(e){
-      console.log('hello yanxiaobo');
     }
     function bindATagAction2(e){
-      console.log('are u ok?');
     }
   }
 

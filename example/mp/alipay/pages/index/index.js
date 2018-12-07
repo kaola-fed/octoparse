@@ -8,7 +8,6 @@ Page({
     this.setData({
       article: maxRes
     })
-    console.log(this)
   },
   onReady() {
     // 页面加载完成
