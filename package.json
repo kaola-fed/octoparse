@@ -1,14 +1,8 @@
 {
   "name": "octoparse",
-<<<<<<< HEAD
-  "version": "0.1.11",
-  "description": "octoParse-微信小程序富文本解析自定义组件",
-  "homepage": "https://github.com/stevenBZ/octoParse",
-=======
   "version": "0.2.0",
   "description": "octoParse-小程序富文本解析自定义组件",
   "homepage": "https://github.com/kaola-fed/octoparse",
->>>>>>> 7da3d7609ed5fc5e7132560cbf73dca79a5b0f35
   "files": [
     "lib",
     "index.js"
