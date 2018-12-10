@@ -1,4 +1,4 @@
-import octoParse from '../../lib/index.js'
+var octoParse = require('../../lib/main.js').default
 Page({
   onLoad(query) {
     // 页面加载

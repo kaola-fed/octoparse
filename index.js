@@ -1,4 +1,4 @@
-import octoParse from './lib/index.js';
+var octoParse = require('./lib/index').default
 
-exports.octoParse = octoParse;
-export default octoParse;
+exports.octoParse = octoParse
+export default octoParse

@@ -1,10 +1,12 @@
-import octoParse from '../../lib/index.js';
+// import octoParse from '../../index.js';
+var octoParse = require('../../lib/main.js').default
 Page({
   data: {
     name: 1
   },
   onLoad: function () {
     var that = this;
+    console.log('引入的对象是', octoParse)
     /**
      * html解析示例
      */

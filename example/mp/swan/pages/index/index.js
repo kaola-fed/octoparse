@@ -1,4 +1,4 @@
-import octoParse from '../../lib/index.js';
+var octoParse = require('../../lib/main.js').default
 Page({
   data: {
     name: 1

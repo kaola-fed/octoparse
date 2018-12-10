@@ -18,3 +18,4 @@ jsconfig.json
 typings/
 example/mp/*/lib
 .tea
+lib
