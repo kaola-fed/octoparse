@@ -1,4 +1,4 @@
-const { src, dest, parallel, watch } = require('gulp');
+const { src, dest, parallel, watch, task } = require('gulp');
 
 function copy({ from, to }) {
   return function copy() {
@@ -16,7 +16,12 @@ function makeDevTasks() {
     })
   ));
 }
-
+function copyTemplate(){
+  return copy({
+    from: 'src/platform/**/*',
+    to: 'lib/platform'
+  })
+}
 function dev() {
   const watchOptions = {
     ignoreInitial: false
@@ -29,6 +34,7 @@ function dev() {
 }
 
 module.exports = {
+  copyTemplate: copyTemplate(),
   dev,
   default: dev
 }

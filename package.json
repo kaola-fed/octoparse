@@ -17,7 +17,7 @@
     "tasks": "gulp --tasks",
     "dev": "gulp dev",
     "test": "jest",
-    "build": "webpack --config ./config/index.js && babel src --out-dir lib"
+    "build": "webpack --config ./config/index.js && babel src --out-dir lib && gulp copyTemplate"
   },
   "keywords": [
     "html",

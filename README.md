@@ -177,6 +177,13 @@
     let res = octoparse.htmlParse(htmlStr, options)
 ```
 
+### 本地开发
+
+* git clone https://github.com/kaola-fed/octoparse.git
+* cd octoparse
+* npm i
+* npm run build
+* gulp (因为小程序不允许引用根目录以外的文件，所以这里跑一下gulp任务将模板拷贝到小程序demo的目录下面)
 
 
 
