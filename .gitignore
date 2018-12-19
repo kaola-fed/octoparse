@@ -19,3 +19,4 @@ typings/
 example/mp/*/lib
 .tea
 lib
+package-lock.json
