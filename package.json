@@ -1,6 +1,6 @@
 {
   "name": "octoparse",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "octoParse-小程序富文本解析自定义组件",
   "homepage": "https://github.com/kaola-fed/octoparse",
   "files": [
@@ -12,12 +12,13 @@
     "type": "git",
     "url": "https://github.com/kaola-fed/octoparse.git"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "src/index.js",
   "scripts": {
     "tasks": "gulp --tasks",
     "dev": "gulp dev",
     "test": "jest",
-    "build": "webpack --config ./config/index.js && babel src --out-dir lib && gulp copyTemplate"
+    "build": "babel src --out-dir lib --plugins=babel-plugin-add-module-exports && gulp copyTemplate"
   },
   "keywords": [
     "html",
@@ -34,7 +35,10 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "babel-plugin-add-module-exports": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+   
+  }
 }

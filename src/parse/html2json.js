@@ -8,6 +8,7 @@ import {
     trimHtml
 } from './utils/index'
 import {HTMLParser} from './htmlparser'
+import decode from './utils/decode'
 import {
     block,
     inline,
@@ -20,6 +21,7 @@ function html2json(html, bindName = 'root', options={}) {
     //处理字符串
     html = removeDOCTYPE(html);
     html = trimHtml(html);
+    html = decode(html);
     //生成node节点
     var bufArray = [];
     var results = {
