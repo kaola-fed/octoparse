@@ -127,21 +127,19 @@
 
 使用visitors方法对解析的html节点进行处理。
 
-例如：移除所有img标签的样式
+例如：为所有的img图片加上display:block样式去除连续图片中间的缝隙
 
 ```html
     let options = {
       visitors: {
         img(node){
-          node.styleStr = '';
+          node.styleStr = 'display:block';
         }
       }
     }
     let htmlStr = 
-            `<div>
-                <p>test</p>
-                <img style="width:200px;height:200px;" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3492149706,1549268323&fm=26&gp=0.jpg" alt="test" title="girl">
-             </div>`;
+            `<img src="//pop.nosdn.127.net/e2170dcf-efd0-4906-9da9-3a9900e52b39">
+            <img src="//pop.nosdn.127.net/929408c3-7a72-44d2-9b11-8d5c6ea98dbb">`;
     let res = octoparse.htmlParse(htmlStr, options)
 ```
 #### 节点属性释义
@@ -182,6 +180,7 @@
 * git clone https://github.com/kaola-fed/octoparse.git
 * cd octoparse
 * npm i
+* npm install gulp -g  (安装一下gulp)
 * npm run build
 * gulp (因为小程序不允许引用根目录以外的文件，所以这里跑一下gulp任务将模板拷贝到小程序demo的目录下面)
 

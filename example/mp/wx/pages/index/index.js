@@ -1,5 +1,5 @@
 // import octoParse from '../../index.js';
-var octoParse = require('../../lib/main.js').default
+var octoParse = require('../../lib/index.js').default
 Page({
   data: {
     name: 1
@@ -10,14 +10,14 @@ Page({
     /**
      * html解析示例
      */
-    var article = `<div class="wx_title">OCTOPATH TRAVELER</div>
-    <img src="http://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540183348581&di=507d478e517ac2ef9472f89446239f7a&imgtype=0&src=http%3A%2F%2Fcms-bucket.nosdn.127.net%2F2018%2F07%2F18%2Faec8e5f0492247d78f49cdc3155c463e.jpeg" alt="octoparse">`;
+    var article = `<img src="//pop.nosdn.127.net/e2170dcf-efd0-4906-9da9-3a9900e52b39">
+    <img src="//pop.nosdn.127.net/929408c3-7a72-44d2-9b11-8d5c6ea98dbb">`;
     let options = {
       platform: 'wechat',
       plugins: [],
       visitors: {
         img(node){
-          node.styleStr = '';
+          node.styleStr = 'display:block;';
         }
       }
     }
