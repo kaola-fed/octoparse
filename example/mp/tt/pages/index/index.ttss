@@ -1,0 +1,18 @@
+@import '../../lib/platform/wechat/index.wxss';
+.sus-h2{
+    color: red;
+}
+.testImg{
+    border:1px solid gray;
+    width:200px;
+    height:200px;
+    float:left;
+}
+.testA{
+    display:block;
+}
+.wx_title{
+    text-align: center;
+    margin-top:10px;
+    font-weight: 900;
+}

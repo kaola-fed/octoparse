@@ -9,7 +9,7 @@ function copy({ from, to }) {
 }
 
 function makeDevTasks() {
-  return ['wx', 'alipay', 'swan'].map((platform) => (
+  return ['wx', 'alipay', 'swan', 'tt'].map((platform) => (
     copy({
       from: 'lib/**/*',
       to: `example/mp/${platform}/lib`
