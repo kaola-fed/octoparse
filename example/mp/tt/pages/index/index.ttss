@@ -1,4 +1,4 @@
-@import '../../lib/platform/wechat/index.wxss';
+@import '../../lib/platform/toutiao/index.ttss';
 .sus-h2{
     color: red;
 }

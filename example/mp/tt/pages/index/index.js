@@ -58,7 +58,7 @@ Page({
         <p style="text-align:center;"><img src="http://haitao.nos.netease.com/f448c4490afc4b0484248b1e6035991d1529980559392jiv2x73410299.jpg?imageView&amp;quality=98&amp;crop=0_6500_750_149" />
       </p>`;
     let options = {
-      platform: 'wechat',
+      platform: 'toutiao',
       plugins: [],
       visitors: {
         img(node){
