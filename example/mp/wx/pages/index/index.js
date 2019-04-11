@@ -11,6 +11,7 @@ Page({
      * html解析示例
      */
     var article = `<p style="text-align:center;">
+    <span>文本1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>文本2</span>
     <img src="http://haitao.nos.netease.com/f448c4490afc4b0484248b1e6035991d1529980559392jiv2x73410299.jpg?imageView&amp;quality=98&amp;crop=0_0_750_500" />
     </p> 
     <p style="text-align:center;">
