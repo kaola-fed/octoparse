@@ -18,7 +18,8 @@
     "tasks": "gulp --tasks",
     "dev": "gulp dev",
     "test": "jest",
-    "build": "babel src --out-dir lib --plugins=babel-plugin-add-module-exports && gulp copyTemplate"
+    "build": "babel src --out-dir lib --plugins=babel-plugin-add-module-exports && gulp copyTemplate",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "html",
