@@ -1,7 +1,1 @@
-{
-  "libVersion": "2.0.13",
-  "appid": "testappid",
-  "setting": {
-    "urlCheck": false
-  }
-}
+{"appid":"testappid","editor":{"expands":[],"paths":[]},"host":"baiduboxapp","libVersion":"2.0.13","setting":{"urlCheck":false}}

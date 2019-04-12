@@ -5,4 +5,5 @@ let octoparse = {
     install,
     mountAction
 }
+module.exports = octoparse;
 export default octoparse;
