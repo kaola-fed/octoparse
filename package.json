@@ -1,6 +1,6 @@
 {
   "name": "octoparse",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "octoParse-小程序富文本解析自定义组件",
   "homepage": "https://github.com/kaola-fed/octoparse",
   "files": [
@@ -18,6 +18,7 @@
     "tasks": "gulp --tasks",
     "dev": "gulp dev",
     "test": "jest",
+    "build:watch": "babel src --out-dir lib --plugins=babel-plugin-add-module-exports --watch && gulp copyTemplate",
     "build": "babel src --out-dir lib --plugins=babel-plugin-add-module-exports && gulp copyTemplate",
     "prepublish": "npm run build"
   },
