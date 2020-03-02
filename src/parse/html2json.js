@@ -93,6 +93,8 @@ function html2json(html, bindName = 'root', options={}) {
 
                     return pre;
                 }, {});
+            } else {
+                node.attr = {};
             }
 
             //对img添加额外数据
