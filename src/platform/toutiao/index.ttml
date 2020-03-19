@@ -36,8 +36,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse1" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse1" data="{{item: e}}" />
         </block>
       </button>
     </block>
@@ -49,8 +49,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse1" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse1" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -69,16 +69,25 @@
 
     <!--a类型-->
     <block data-tag="{{item.tag}}" tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse1" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse1" data="{{item: e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
     <block tt:elif="{{item.tag == 'table'}}">
       <view class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse1" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse1" data="{{item: e}}" />
         </block>
       </view>
     </block>
@@ -89,26 +98,26 @@
     <!--其他块级标签-->
     <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse1" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse1" data="{{item: e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse1" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse1" data="{{item:e}}" />
       </block>
     </view>
 
   </block>
 
   <!--判断是否是文本节点-->
-  <block tt:elif="{{item.node == 'text'}}">
+  <!-- <block tt:elif="{{item.node == 'text'}}"> -->
     <!--如果是，直接进行-->
-    <template is="aTextView" data="{{item}}" />
-  </block>
+    <!-- <template is="aTextView" data="{{item}}" /> -->
+  <!-- </block> -->
 
 </template>
 
@@ -121,8 +130,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse2" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse2" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -134,8 +143,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse2" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse2" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -154,11 +163,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse2" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse2" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -167,16 +185,16 @@
     <!--其他块级标签-->
     <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse2" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse2" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse2" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse2" data="{{item:e}}" />
       </block>
     </view>
 
@@ -198,8 +216,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse3" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse3" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -211,8 +229,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse3" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse3" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -231,11 +249,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse3" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse3" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -244,16 +271,16 @@
     <!--其他块级标签-->
     <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse3" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse3" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse3" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse3" data="{{item:e}}" />
       </block>
     </view>
 
@@ -274,8 +301,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse4" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse4" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -287,8 +314,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse4" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse4" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -307,11 +334,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse4" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse4" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -320,16 +356,16 @@
     <!--其他块级标签-->
     <block data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse4" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse4" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse4" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse4" data="{{item:e}}" />
       </block>
     </view>
 
@@ -350,8 +386,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse5" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse5" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -363,8 +399,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse5" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse5" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -383,11 +419,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse5" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse5" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -396,16 +441,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse5" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse5" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse5" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse5" data="{{item:e}}" />
       </block>
     </view>
 
@@ -426,8 +471,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse6" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse6" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -439,8 +484,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse6" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse6" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -459,11 +504,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse6" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse6" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -472,16 +526,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse6" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse6" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse6" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse6" data="{{item:e}}" />
       </block>
     </view>
 
@@ -502,8 +556,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse7" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse7" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -515,8 +569,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse7" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse7" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -535,11 +589,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse7" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse7" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -548,16 +611,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse7" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse7" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse7" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse7" data="{{item:e}}" />
       </block>
     </view>
 
@@ -577,8 +640,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse8" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse8" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -590,8 +653,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse8" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse8" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -610,11 +673,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse8" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse8" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -623,16 +695,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse8" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse8" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse8" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse8" data="{{item:e}}" />
       </block>
     </view>
 
@@ -653,8 +725,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse9" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse9" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -666,8 +738,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse9" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse9" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -686,11 +758,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse9" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse9" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -699,16 +780,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse9" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse9" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse9" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse9" data="{{item:e}}" />
       </block>
     </view>
 
@@ -729,8 +810,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse10" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+          <template is="octoParse10" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -742,8 +823,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse10" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+              <template is="octoParse10" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -762,11 +843,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse10" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+          <template is="octoParse10" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -775,16 +865,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse10" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+          <template is="octoParse10" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse10" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+        <template is="octoParse10" data="{{item:e}}" />
       </block>
     </view>
 
@@ -805,8 +895,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse11" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+          <template is="octoParse11" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -818,8 +908,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse11" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+              <template is="octoParse11" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -838,11 +928,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse11" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="item:e" tt:key="">
+          <template is="octoParse11" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -851,16 +950,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse11" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse11" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse11" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse11" data="{{item:e}}" />
       </block>
     </view>
 
@@ -881,8 +980,8 @@
   <block tt:if="{{item.node == 'element'}}">
     <block tt:if="{{item.tag == 'button'}}">
       <button type="default" size="mini">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse12" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse12" data="{{item:e}}" />
         </block>
       </button>
     </block>
@@ -894,8 +993,8 @@
             <view class="{{item.classStr}} octoParse-li-circle"></view>
           </view>
           <view class="{{item.classStr}} octoParse-li-text">
-            <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-              <template is="octoParse12" data="{{item}}" />
+            <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+              <template is="octoParse12" data="{{item:e}}" />
             </block>
           </view>
         </view>
@@ -914,11 +1013,20 @@
 
     <!--a类型-->
     <block tt:elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse12" data="{{item}}" />
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse12" data="{{item:e}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block tt:elif="{{item.tag == 'br'}}">
@@ -927,16 +1035,16 @@
     <!--其他块级标签-->
     <block tt:elif="{{item.tagType == 'block'}}">
       <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
-        <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-          <template is="octoParse12" data="{{item}}" />
+        <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+          <template is="octoParse12" data="{{item:e}}" />
         </block>
       </view>
     </block>
 
     <!--内联标签-->
     <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  tt:else class="{{item.classStr}} octoParse-{{item.tag}} octoParse-{{item.tagType}}" style="{{item.styleStr}}">
-      <block tt:for="{{item.nodes}}" tt:for-item="item" tt:key="">
-        <template is="octoParse12" data="{{item}}" />
+      <block tt:for="{{item.nodes}}" tt:for-item="e" tt:key="">
+        <template is="octoParse12" data="{{item:e}}" />
       </block>
     </view>
 
