@@ -36,6 +36,8 @@ function html2json(html, bindName = 'root', options={}) {
             var node = {
                 node: 'element',
                 tag: tag,
+                styleStr: '',
+                classStr: ''
             };
 
             if (bufArray.length === 0) {
@@ -64,12 +66,12 @@ function html2json(html, bindName = 'root', options={}) {
                     if (name == 'class') {
                         // console.dir(value);
                         //  value = value.join("")
-                        node.classStr = value;
+                        node.classStr = value || '';
                     }
                     // has multi attibutes
                     // make it array of attribute
                     if (name == 'style') {
-                        node.styleStr = value;
+                        node.styleStr = value || '';
                     }
                     if (value.match(/ /) && name !== 'style') {
                         value = value.split(' ');
