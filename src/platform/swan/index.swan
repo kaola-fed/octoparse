@@ -69,11 +69,20 @@
 
     <!--a类型-->
     <block data-tag="{{item.tag}}" s-elif="{{item.tag == 'a'}}">
-      <view  data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse1" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
     <block s-elif="{{item.tag == 'table'}}">
       <view class="{{item.classStr}} octoParse-{{item.tag}}" style="{{item.styleStr}}">
@@ -154,11 +163,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse2" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -231,11 +249,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse3" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -307,11 +334,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse4" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -383,11 +419,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse5" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -459,11 +504,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse6" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -535,11 +589,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse7" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -610,11 +673,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse8" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -686,11 +758,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse9" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -762,11 +843,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse10" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -838,11 +928,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse11" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
@@ -914,11 +1013,20 @@
 
     <!--a类型-->
     <block s-elif="{{item.tag == 'a'}}">
-      <view data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}"  class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}" data-src="{{item.attr.href}}" style="{{item.styleStr}}">
+      <navigator
+        data-tag="{{item.tag}}"
+        data-class="{{item.classStr}}"
+        data-id="{{item.attr.id}}"
+        class="octoParse-inline {{item.classStr}} octoParse-{{item.tag}}"
+        style="{{item.styleStr}}"
+        data-src="{{item.attr.href}}"
+        open-type="{{item.attr.opentype || 'navigate'}}"
+        url="{{item.attr.href}}"
+      >
         <block s-for="{{item.nodes}}" s-for-item="item" s-key="">
           <template is="octoParse12" data="{{{item}}}" />
         </block>
-      </view>
+      </navigator>
     </block>
 
     <block s-elif="{{item.tag == 'br'}}">
