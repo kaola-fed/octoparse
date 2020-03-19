@@ -1,11 +1,11 @@
 {
-    "setting": {
-        "urlCheck": true,
-        "es6": true,
-        "postcss": true,
-        "minified": true,
-        "newFeature": true
-    },
-    "appid": "体验appId",
-    "projectname": "Mr_Jax的小程序"
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "体验appId",
+	"projectname": "Mr_Jax的小程序"
 }

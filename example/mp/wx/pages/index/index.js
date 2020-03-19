@@ -1,5 +1,5 @@
 // import octoParse from '../../index.js';
-var octoParse = require('../../lib/index.js').default
+var octoParse = require('../../lib/index.js')
 Page({
   data: {
     name: 1
@@ -58,6 +58,9 @@ Page({
           <img src="http://haitao.nos.netease.com/f448c4490afc4b0484248b1e6035991d1529980559392jiv2x73410299.jpg?imageView&amp;quality=98&amp;crop=0_6000_750_500" /></p> ↵
         <p style="text-align:center;"><img src="http://haitao.nos.netease.com/f448c4490afc4b0484248b1e6035991d1529980559392jiv2x73410299.jpg?imageView&amp;quality=98&amp;crop=0_6500_750_149" />
       </p>`;
+
+
+    var article = '<div><div><div><a href="index">kaola</a></div></div></div>'
     let options = {
       platform: 'wechat',
       plugins: [],
