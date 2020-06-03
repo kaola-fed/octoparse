@@ -7,7 +7,7 @@
 </template>
 
 <template name="octoParseImg">
-  <image preview="{{!!item.preview || false}}" data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" class="{{item.classStr}} octoParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="widthFix"    style="{{item.styleStr}}"
+  <image preview="{{!!item.preview}}" data-tag="{{item.tag}}" data-class="{{item.classStr}}" data-id="{{item.attr.id}}" class="{{item.classStr}} octoParse-{{item.tag}}" data-from="{{item.from}}" data-src="{{item.attr.src}}" data-idx="{{item.imgIndex}}" src="{{item.attr.src}}" mode="widthFix"    style="{{item.styleStr}}"
   />
 </template>
 
