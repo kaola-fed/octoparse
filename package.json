@@ -1,6 +1,6 @@
 {
   "name": "octoparse",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "octoParse-小程序富文本解析自定义组件",
   "homepage": "https://github.com/kaola-fed/octoparse",
   "files": [
