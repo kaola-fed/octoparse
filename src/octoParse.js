@@ -3,8 +3,7 @@
  * utils函数引入
  **/
 import {html2json} from './parse/html2json';
-// function agentFunc(){
-// };
+
 /**
  * 主函数入口区
  **/
@@ -21,7 +20,6 @@ function htmlParse(data='<div></div>', options={}){
  **/
 function install(Vue){
   Vue.prototype.$htmlParse = htmlParse;
-  Vue.prototype.$agentFunc = agentFunc;
 }
 export {
   htmlParse,
