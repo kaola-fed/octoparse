@@ -114,10 +114,10 @@
   </block>
 
   <!--判断是否是文本节点-->
-  <!-- <block tt:elif="{{item.node == 'text'}}"> -->
+  <block tt:elif="{{item.node == 'text'}}">
     <!--如果是，直接进行-->
-    <!-- <template is="aTextView" data="{{item}}" /> -->
-  <!-- </block> -->
+    <template is="aTextView" data="{{item}}" />
+  </block>
 
 </template>
 
